@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,12 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Button btnHello = findViewById(R.id.btnHello);
+        btnHello.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Hello");
+            }
+        });
     }
 
-    public void btn_click (View view) {
-        TextView txtHello = findViewById(R.id.txtMessage);
-        EditText edt_txt_name = findViewById(R.id.edt_txt_name);
-        txtHello.setText("Hello " + edt_txt_name.getText().toString());
-    }
 }
